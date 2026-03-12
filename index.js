@@ -21,7 +21,9 @@ app.set("layout", "layout");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+const ordersRoute = require("./routes/ordersRoute.js");
 
+app.use("/orders", ordersRoute);
 app.use(
   session({
     secret: "secretkey",
